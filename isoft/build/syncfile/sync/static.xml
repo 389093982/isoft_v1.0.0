@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <syncfile>
-    <source>src\isoft\isoft\syncfile\static_common</source>
+    <source>src\isoft\isoft\build\syncfile\static_common</source>
     <target>
         <name>isoft_deploy_web</name>
         <value>src\isoft\isoft_deploy_web\static\common</value>
