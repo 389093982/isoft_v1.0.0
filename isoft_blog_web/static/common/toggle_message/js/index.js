@@ -108,11 +108,11 @@
 
 
 
-})(jQuery);
+})(jQuery)
 
 $(function(){
   $('#slogan').typer({
     search: 'stronger',
     replace: ['powerful', 'easiest', 'stranger']
   })
-});
+})

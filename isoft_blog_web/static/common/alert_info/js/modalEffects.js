@@ -33,4 +33,4 @@ ModalEffects.prototype.init = function() {
             removeModalHandler();
         });
     } );
-};
+}

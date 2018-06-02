@@ -2,11 +2,11 @@ package sync
 
 import (
 	"encoding/xml"
-	"github.com/astaxie/beego/logs"
 	"isoft/isoft/common/fileutil"
 	"io/ioutil"
 	"log"
 	"os"
+	"fmt"
 )
 
 type SyncFile struct {
@@ -38,35 +38,32 @@ func StartAllSyncFile(syncFile SyncFile, filterTargetName string) {
 	targets := syncFile.Targets
 	for _, target := range targets {
 		if filterTargetName == "" || (filterTargetName != "" && filterTargetName == target.Name) {
-			_, err := StartOneSyncFile(source, target.Value)
-			if err != nil {
-				logs.Error(err.Error())
-			}
+			// 开启协程执行任务
+			go StartOneSyncFile(source, target.Value)
 		}
 
 	}
 }
 
 // 开始同步一个目录
-func StartOneSyncFile(source, target string) (bool, error) {
+func StartOneSyncFile(source, target string) {
 	// 判断源文件夹是否存在
 	if exist, err := fileutil.PathExists(source); exist == false {
-		return false, err
+		fmt.Println(err.Error())
 	}
 	// 判断目标文件夹是否存在,存在则进行删除
 	if exist, err := fileutil.PathExists(target); exist == true {
 		if err = os.RemoveAll(target); err != nil {
-			return false, err
+			fmt.Println(err.Error())
 		} else {
-			log.Println("clean dir %s", target)
+			fmt.Println("clean dir %s", target)
 		}
 	}
 	// 拷贝文件
 	err := fileutil.CopyDir(source, target)
 	if err != nil {
-		return false, err
+		fmt.Println(err.Error())
 	} else {
-		log.Println("copy dir %s to %s", source, target)
+		fmt.Println("copy dir %s to %s", source, target)
 	}
-	return true, nil
 }
