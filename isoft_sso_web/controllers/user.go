@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
-	"github.com/isoft/isoft_sso_web/models"
+	"isoft/isoft_sso_web/models"
 	"strings"
 	"time"
 )

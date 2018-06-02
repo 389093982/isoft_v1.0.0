@@ -3,8 +3,8 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/utils/pagination"
-	"github.com/isoft/isoft_sso_web/ilearning/util"
-	"github.com/isoft/isoft_sso_web/models"
+	"isoft/isoft_sso_web/ilearning/util"
+	"isoft/isoft_sso_web/models"
 	"time"
 )
 

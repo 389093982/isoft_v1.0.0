@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/isoft/isoft/sso"
-	"github.com/isoft/isoft_learning_web/models"
+	"isoft/isoft/sso"
+	"isoft/isoft_learning_web/models"
 )
 
 type CommonController struct {

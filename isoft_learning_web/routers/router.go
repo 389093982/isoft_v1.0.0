@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/isoft/isoft_learning_web/controllers"
+	"isoft/isoft_learning_web/controllers"
 	//"github.com/astaxie/beego/plugins/cors"
 )
 

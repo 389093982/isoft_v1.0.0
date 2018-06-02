@@ -1,7 +1,7 @@
 package test
 
 import (
-	_ "github.com/isoft/isoft_sso_web/routers"
+	_ "isoft/isoft_sso_web/routers"
 	"net/http"
 	"net/http/httptest"
 	"path/filepath"

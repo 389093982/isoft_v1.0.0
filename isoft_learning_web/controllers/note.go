@@ -3,7 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
-	"github.com/isoft/isoft_learning_web/models"
+	"isoft/isoft_learning_web/models"
 	"strings"
 	"time"
 )

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/utils/pagination"
-	"github.com/isoft/isoft/common"
-	"github.com/isoft/isoft_blog_web/models"
+	"isoft/isoft/common"
+	"isoft/isoft_blog_web/models"
 	"time"
 )
 

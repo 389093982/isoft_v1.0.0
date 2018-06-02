@@ -5,7 +5,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/isoft/isoft_blog_web/models"
+	"isoft/isoft_blog_web/models"
 	"net/url"
 )
 

@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/isoft/isoft_learning_web/models"
+	"isoft/isoft_learning_web/models"
 )
 
 type MainController struct {

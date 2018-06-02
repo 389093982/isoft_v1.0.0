@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/isoft/isoft/sso"
-	"github.com/isoft/isoft_blog_web/initial"
-	_ "github.com/isoft/isoft_blog_web/routers"
+	"isoft/isoft/sso"
+	"isoft/isoft_blog_web/initial"
+	_ "isoft/isoft_blog_web/routers"
 )
 
 func init() {
