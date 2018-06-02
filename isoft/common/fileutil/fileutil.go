@@ -5,7 +5,6 @@ import (
 	"io"
 	"os"
 	"path/filepath"
-	"fmt"
 	"strings"
 )
 
@@ -79,9 +78,6 @@ func CopyFile(source, dest string) error {
 	defer dest_open.Close()
 	//进行数据拷贝
 	_, copy_err := io.Copy(dest_open, source_open)
-
-	fmt.Printf("copy %s file to %s\n", source, dest)
-
 	if copy_err != nil {
 		return copy_err
 	}
