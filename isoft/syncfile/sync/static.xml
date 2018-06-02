@@ -10,7 +10,7 @@
         <value>src\isoft\isoft_sso_web\static\common</value>
     </target>
     <target>
-        <name>isoft_ilearning_web</name>
-        <value>src\isoft\isoft_ilearning_web\static\common</value>
+        <name>isoft_learning_web</name>
+        <value>src\isoft\isoft_learning_web\static\common</value>
     </target>
 </syncfile>

@@ -6070,9 +6070,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    resize: function() {
 	      if (!slider.animating && slider.is(':visible')) {
-	        if (!carousel) {slider.doMath()};
-
-	        if (fade) {
+              if (!carousel) {
+                  slider.doMath()
+              }
+              if (fade) {
 	          // SMOOTH HEIGHT:
 	          methods.smoothHeight();
 	        } else if (carousel) { //CAROUSEL:
@@ -6303,8 +6304,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }
 	      // SMOOTH HEIGHT:
-	      if (slider.vars.smoothHeight) {methods.smoothHeight(slider.vars.animationSpeed)};
-	    }
+            if (slider.vars.smoothHeight) {
+                methods.smoothHeight(slider.vars.animationSpeed)
+            }
+        }
 	  };
 	  slider.wrapup = function(dimension) {
 	    // SLIDE:
@@ -6883,7 +6886,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            throw new Error('clearTimeout is not defined');
 	        }
 	    }
-	} ())
+	} ());
 	function runTimeout(fun) {
 	    if (cachedSetTimeout === setTimeout) {
 	        //normal enviroments in sane situations
@@ -12101,7 +12104,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    var length = this.rsBlock.length / 3;
 
-	    var rsBlocks = new Array();
+	    var rsBlocks = [];
 
 	    for (var i = 0; i < length; i++) {
 
@@ -12917,7 +12920,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//---------------------------------------------------------------------
 
 	function QRBitBuffer() {
-	  this.buffer = new Array();
+	  this.buffer = [];
 	  this.length = 0;
 	}
 
@@ -13259,7 +13262,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    var length = this.rsBlock.length / 3;
 
-	    var rsBlocks = new Array();
+	    var rsBlocks = [];
 
 	    for (var i = 0; i < length; i++) {
 
@@ -14075,7 +14078,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// ---------------------------------------------------------------------
 
 	function QRBitBuffer() {
-	  this.buffer = new Array();
+	  this.buffer = [];
 	  this.length = 0;
 	}
 
@@ -16777,4 +16780,3 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ }
 /******/ ])
 });
-;

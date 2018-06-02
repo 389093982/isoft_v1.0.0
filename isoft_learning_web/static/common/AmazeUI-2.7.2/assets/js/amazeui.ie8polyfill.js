@@ -2052,8 +2052,6 @@ if (String(/a/mig) !== '/a/gim') {
 // vim: ts=4 sts=4 sw=4 expandtab
 
 // Add semicolon to prevent IIFE from being passed as argument to concatenated code.
-;
-
 // UMD (Universal Module Definition)
 // see https://github.com/umdjs/umd/blob/master/templates/returnExports.js
 (function (root, factory) {

@@ -64,7 +64,7 @@ var validateRegExp = {
                     succeedEle:_succeed
                 }, option.isNull);
             } else if (tag == 1 || tag == 2) {
-                return;
+
             } else {                                    // 非空时执行
                 // 回调函数 5 大参数 option = {prompts:option,element:ele,value:str,errorEle:_error,succeedEle:_succeed}
                 callback({
@@ -476,7 +476,7 @@ var validateFunction = {
         var bool = validateRules.isNull(option.value);
         if (bool) {
             option.element.val("可不填");
-            return;
+
         } else {
             validateSettings.succeed.run(option);
         }
@@ -485,7 +485,7 @@ var validateFunction = {
         var bool = validateRules.isNull(option.value);
         if (bool) {
             validateSettings.error.run(option, option.prompts.error);
-            return;
+
         } else {
             validateSettings.succeed.run(option);
         }
@@ -601,7 +601,7 @@ var validateFunction = {
         $("#pwd").bind("keyup",
             function () {
                 validateFunction.pwdstrength();
-            }).ilearningValidate(validatePrompt.pwd, validateFunction.pwd)
+            }).ilearningValidate(validatePrompt.pwd, validateFunction.pwd);
         var P2 = $("<input type='" + type + "' value='" + v2 + "' sta='" + s2 + "' class='" + c2 + "' id='pwd2' name='pwd2' tabindex='" + t2 + "'/>");
         $("#pwd2").after(P2).remove();
         $("#pwd2").ilearningValidate(validatePrompt.pwd2, validateFunction.pwd2);

@@ -187,7 +187,7 @@ a:hover{color:#ff5a00;text-decoration:none;}
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript">
 //置顶图标显示
-$('#top-back').hide()
+$('#top-back').hide();
 $(window).scroll(function(){
 	 if($(this).scrollTop() > 350){
 		$("#top-back").fadeIn();
@@ -195,7 +195,7 @@ $(window).scroll(function(){
 	 else{
 		$("#top-back").fadeOut();
 	 }
-  })	
+  });
 //置顶事件
 function topBack(){
   $('body,html').animate({scrollTop:0},300);
