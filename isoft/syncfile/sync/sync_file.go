@@ -39,7 +39,8 @@ func StartAllSyncFile(dirPath string, syncFile SyncFile, filterTargetName string
 	targets := syncFile.Targets
 	for _, target := range targets {
 		if filterTargetName == "" || (filterTargetName != "" && filterTargetName == target.Name) {
-			StartOneSyncFile(filepath.Join(dirPath, source), filepath.Join(dirPath, target.Value))
+			// 开启协程执行任务
+			go StartOneSyncFile(filepath.Join(dirPath, source), filepath.Join(dirPath, target.Value))
 		}
 
 	}
