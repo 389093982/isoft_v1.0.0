@@ -3,7 +3,7 @@ package sync
 import (
 	"encoding/xml"
 	"github.com/astaxie/beego/logs"
-	"github.com/isoft/isoft/common/fileutil"
+	"isoft/isoft/common/fileutil"
 	"io/ioutil"
 	"log"
 	"os"

@@ -1,6 +1,6 @@
 package main
 
-import "isoft/syncfile/sync"
+import "isoft/isoft/syncfile/sync"
 
 func main() {
 	//ok := flag.Bool("static_sync", false, "static_sync_all")
