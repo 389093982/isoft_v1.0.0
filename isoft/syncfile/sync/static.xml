@@ -3,18 +3,14 @@
     <source>src\isoft\isoft\syncfile\static_common</source>
     <target>
         <name>isoft_deploy_web</name>
-        <value>src\isoft_deploy_web\static\common</value>
+        <value>src\isoft\isoft_deploy_web\static\common</value>
     </target>
     <target>
         <name>isoft_sso_web</name>
-        <value>src\isoft_sso_web\static\common</value>
-    </target>
-    <target>
-        <name>isoft_deploy_web</name>
-        <value>src\isoft_deploy_web\static\common</value>
+        <value>src\isoft\isoft_sso_web\static\common</value>
     </target>
     <target>
         <name>isoft_ilearning_web</name>
-        <value>src\isoft_ilearning_web\static\common</value>
+        <value>src\isoft\isoft_ilearning_web\static\common</value>
     </target>
 </syncfile>

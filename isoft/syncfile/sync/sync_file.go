@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"fmt"
+	"path/filepath"
 )
 
 type SyncFile struct {
@@ -33,13 +34,12 @@ func ReadSyncFile(filepath string) (syncFile SyncFile) {
 }
 
 // 同步所有目录
-func StartAllSyncFile(syncFile SyncFile, filterTargetName string) {
+func StartAllSyncFile(dirPath string, syncFile SyncFile, filterTargetName string) {
 	source := syncFile.Source
 	targets := syncFile.Targets
 	for _, target := range targets {
 		if filterTargetName == "" || (filterTargetName != "" && filterTargetName == target.Name) {
-			// 开启协程执行任务
-			go StartOneSyncFile(source, target.Value)
+			StartOneSyncFile(filepath.Join(dirPath, source), filepath.Join(dirPath, target.Value))
 		}
 
 	}
@@ -48,15 +48,15 @@ func StartAllSyncFile(syncFile SyncFile, filterTargetName string) {
 // 开始同步一个目录
 func StartOneSyncFile(source, target string) {
 	// 判断源文件夹是否存在
-	if exist, err := fileutil.PathExists(source); exist == false {
-		fmt.Println(err.Error())
+	if exist, _ := fileutil.PathExists(source); exist == false {
+		fmt.Printf("file %s not exists!\n", source)
 	}
 	// 判断目标文件夹是否存在,存在则进行删除
 	if exist, err := fileutil.PathExists(target); exist == true {
 		if err = os.RemoveAll(target); err != nil {
 			fmt.Println(err.Error())
 		} else {
-			fmt.Println("clean dir %s", target)
+			fmt.Printf("clean dir %s\n", target)
 		}
 	}
 	// 拷贝文件
@@ -64,6 +64,6 @@ func StartOneSyncFile(source, target string) {
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
-		fmt.Println("copy dir %s to %s", source, target)
+		fmt.Printf("copy dir %s to %s\n", source, target)
 	}
 }

@@ -6,9 +6,14 @@ import (
 	"path/filepath"
 )
 
-// go test –file sync_file_test.go -run='Test_SyncFile_Static'
 func Test_SyncFile_Static(t *testing.T) {
 	gopath := os.Getenv("GOPATH")
-	SyncFile := ReadSyncFile( filepath.Join(gopath, "src/isoft/syncfile/sync/static.xml"))
-	StartAllSyncFile(SyncFile, "")
+	SyncFile := ReadSyncFile( filepath.Join(gopath, "src/isoft/isoft/syncfile/sync/static.xml"))
+	StartAllSyncFile(gopath, SyncFile, "")
+}
+
+func Test_SyncOneFile_Static(t *testing.T) {
+	gopath := os.Getenv("GOPATH")
+	SyncFile := ReadSyncFile( filepath.Join(gopath, "src/isoft/isoft/syncfile/sync/static.xml"))
+	StartAllSyncFile(gopath, SyncFile, "isoft_deploy_web")
 }

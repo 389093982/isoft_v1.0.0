@@ -5,6 +5,8 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"fmt"
+	"strings"
 )
 
 // golang判断文件或文件夹是否存在的方法为使用os.Stat()函数返回的错误值进行判断:
@@ -26,22 +28,21 @@ func PathExists(path string) (bool, error) {
 func CopyDir(sourceDir string, destDir string) error {
 	// 遍历文件夹
 	err := filepath.Walk(sourceDir, func(path string, f os.FileInfo, err error) error {
-		if f == nil {
-			return err
-		}
-		// 是目录同时是子目录则进行目录拷贝
-		if f.IsDir() {
-			if sourceDir != path {
-				err = CopyDir(path, filepath.Join(destDir, filepath.Base(path)))
+		if f != nil {
+			// 是目录同时是子目录则进行目录拷贝
+			if f.IsDir() {
+				if sourceDir != path {
+					err = CopyDir(path, strings.Replace(path, sourceDir, destDir, -1))
+					if err != nil {
+						return err
+					}
+				}
+			} else {
+				// 是文件则进行文件拷贝
+				err = CopyFile(path, strings.Replace(path, sourceDir, destDir, -1))
 				if err != nil {
 					return err
 				}
-			}
-		} else {
-			// 是文件则进行文件拷贝
-			err = CopyFile(path, filepath.Join(destDir, filepath.Base(path)))
-			if err != nil {
-				return err
 			}
 		}
 		return nil
@@ -81,6 +82,9 @@ func CopyFile(source, dest string) error {
 	defer dest_open.Close()
 	//进行数据拷贝
 	_, copy_err := io.Copy(dest_open, source_open)
+
+	fmt.Printf("copy %s file to %s\n", source, dest)
+
 	if copy_err != nil {
 		return copy_err
 	}
