@@ -42,7 +42,6 @@ func StartAllSyncFile(dirPath string, syncFile SyncFile, filterTargetName string
 			// 开启协程执行任务
 			go StartOneSyncFile(filepath.Join(dirPath, source), filepath.Join(dirPath, target.Value))
 		}
-
 	}
 }
 
