@@ -39,10 +39,7 @@ func CopyDir(sourceDir string, destDir string) error {
 				}
 			} else {
 				// 是文件则进行文件拷贝
-				err = CopyFile(path, strings.Replace(path, sourceDir, destDir, -1))
-				if err != nil {
-					return err
-				}
+				go CopyFile(path, strings.Replace(path, sourceDir, destDir, -1))
 			}
 		}
 		return nil
