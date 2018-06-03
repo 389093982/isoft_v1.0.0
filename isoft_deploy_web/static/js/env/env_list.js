@@ -73,3 +73,7 @@ function editEnvInfo() {
         }
     });
 }
+
+function connect_test(currentNode) {
+    $(currentNode).parents("tr").find(".connect").addClass("loading");
+}
