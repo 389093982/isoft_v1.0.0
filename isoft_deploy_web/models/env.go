@@ -22,10 +22,10 @@ func CheckEnvInfoExists(condArr map[string]interface{}) (exists bool, err error)
 	qs := o.QueryTable("env_info")
 
 	if env_name, ok := condArr["env_name"]; ok {
-		qs.Filter("env_name", env_name)
+		qs = qs.Filter("env_name", env_name)
 	}
 	if env_name, ok := condArr["env_ip"]; ok {
-		qs.Filter("env_ip", env_name)
+		qs = qs.Filter("env_ip", env_name)
 	}
 	counts, err := qs.Count()
 	if err != nil{

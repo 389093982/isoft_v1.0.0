@@ -32,7 +32,7 @@ func CopyDir(sourceDir string, destDir string) error {
 			if f.IsDir() {
 				if sourceDir != path {
 					err = CopyDir(path, strings.Replace(path, sourceDir, destDir, -1))
-					if err != nil {
+					if err != nil{
 						return err
 					}
 				}

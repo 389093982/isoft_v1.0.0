@@ -39,9 +39,20 @@ $(function () {
 
 
     $(document).ModalEffects({"clearUIFunc":function () {
-        alert("helloworld");
+        // 置空异常信息
+        $("#_editEnvInfo_error").html("");
+        // 清空表单数据
+        clearFormData();
     }});
 });
+
+// 清空表单数据
+function clearFormData() {
+    $("input[id='env_name']").val("");
+    $("input[id='env_ip']").val("");
+    $("input[id='env_account']").val("");
+    $("input[id='env_passwd']").val("");
+}
 
 function editEnvInfo() {
     var env_name = $("input[id='env_name']").val();
@@ -57,7 +68,7 @@ function editEnvInfo() {
             if(data.status=="SUCCESS"){
                 window.location.reload();
             }else{
-                $("#_editEnvInfo_error").html(data.errorMsg);
+                $("#_editEnvInfo_error").html("*" + data.errorMsg);
             }
         }
     });
