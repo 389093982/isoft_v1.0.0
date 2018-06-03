@@ -11,6 +11,7 @@ func Test_SyncFile_Static(t *testing.T) {
 	gopath := os.Getenv("GOPATH")
 	SyncFile := ReadSyncFile( filepath.Join(gopath, "src/isoft/isoft/build/syncfile/sync/static.xml"))
 	StartAllSyncFile(gopath, SyncFile, "")
+
 	time.Sleep(60*time.Second)
 }
 
