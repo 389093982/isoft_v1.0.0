@@ -1,0 +1,47 @@
+<script src="/static/js/env/env_list.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/static/common/paginator/css/paging.css">
+<script type="text/javascript" src="/static/common/paginator/js/query.js"></script>
+<script type="text/javascript" src="/static/common/paginator/js/paging.js"></script>
+<script type="text/javascript" src="/static/common/vue.min.js"></script>
+
+<div style="border:1px solid #D1D1D1;min-height: 500px;">
+
+    <div class="row">
+        <div class="col-lg-6" style="margin-top: 5px; margin-right: 5px; float: right;">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="检索">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="envInfo_list" class="table-responsive" style="margin: 10px;margin-top: 20px;">
+        <div style="margin-bottom: 10px;">
+            <button type="button" class="btn btn-success btn-sm">新增</button>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>环境名称</th>
+                <th>ip地址</th>
+                <th>登录账号</th>
+                <th>密码</th>
+                <th>编辑</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-cloak v-for="envInfo in envInfos">
+                <td>[[ envInfo.env_name ]]</td>
+                <td>[[ envInfo.env_ip ]]</td>
+                <td>[[ envInfo.env_account ]]</td>
+                <td>[[ envInfo.env_passwd ]]</td>
+                <td>编辑</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="pageTool"></div>
+</div>

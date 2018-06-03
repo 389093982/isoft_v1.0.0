@@ -5,9 +5,10 @@ import (
 	_ "isoft/isoft_deploy_web/routers"
 	"github.com/astaxie/beego/logs"
 	"github.com/astaxie/beego/orm"
-	"isoft/isoft_blog_web/models"
 	"net/url"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql" // _ 的作用,并不需要把整个包都导入进来,仅仅是是希望它执行init()函数而已
+	"isoft/isoft_deploy_web/models"
 )
 
 func init()  {
@@ -20,7 +21,7 @@ func InitLog()  {
 	logs.SetLogger(logs.AdapterConsole)
 	// 多文件输出
 	logs.SetLogger(logs.AdapterMultiFile,
-		`{"filename":"../../../../logs/isoft_deploy_web.log","separate":["emergency", "alert", "critical", "error", "warning", "notice", "info", "debug"]}`)
+		`{"filename":"../../../logs/isoft_deploy_web.log","separate":["emergency", "alert", "critical", "error", "warning", "notice", "info", "debug"]}`)
 	// 输出文件名和行号
 	logs.EnableFuncCallDepth(true)
 	// 异步输出日志
@@ -56,8 +57,7 @@ func InitDB() {
 }
 
 func registerModel() {
-	orm.RegisterModel(new(models.Catalog))
-	orm.RegisterModel(new(models.Blog))
+	orm.RegisterModel(new(models.EnvInfo))
 }
 
 // 自动建表
