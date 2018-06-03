@@ -38,8 +38,9 @@ $(function () {
     loadPageData(1,10,pageToolFunction);
 
 
-    var modal = new ModalEffects();     // 渲染弹出层
-    modal.init();
+    $(document).ModalEffects({"clearUIFunc":function () {
+        alert("helloworld");
+    }});
 });
 
 function editEnvInfo() {
