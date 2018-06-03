@@ -173,7 +173,7 @@ $.extend(validateFunction, {
     },
     FORM_validate:function() {
         $("#username").ilearningValidate(validatePrompt.username, validateFunction.username, true);
-        $("#pwd").ilearningValidate(validatePrompt.pwd, validateFunction.pwd, true)
+        $("#pwd").ilearningValidate(validatePrompt.pwd, validateFunction.pwd, true);
         $("#pwd2").ilearningValidate(validatePrompt.pwd2, validateFunction.pwd2, true);
         $("#authcode").ilearningValidate(validatePrompt.authcode, validateFunction.authcode, true);
         $("#realname").ilearningValidate(validatePrompt.realname, validateFunction.realname, true);
@@ -199,7 +199,7 @@ $(function () {
     //密码验证
     $("#pwd").bind("keyup",function(){
         validateFunction.pwdstrength();
-    }).ilearningValidate(validatePrompt.pwd, validateFunction.pwd)
+    }).ilearningValidate(validatePrompt.pwd, validateFunction.pwd);
     //二次密码验证
     $("#pwd2").ilearningValidate(validatePrompt.pwd2, validateFunction.pwd2);
     //邮箱验证
@@ -215,7 +215,7 @@ $(function () {
         if($(this).val() == "" || $(this).val() == "可不填"){
             $(this).css({"color":"#999999","font-size":"12px"}).ilearningValidate(validatePrompt.referrer, validateFunction.referrer, "可不填");
         }
-    })
+    });
     //验证码验证
     $("#authcode").ilearningValidate(validatePrompt.authcode, validateFunction.authcode);
     //联系人姓名验证

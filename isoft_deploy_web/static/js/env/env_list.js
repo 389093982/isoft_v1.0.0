@@ -36,4 +36,28 @@ $(function () {
     }
     // 加载第一页,10条记录,加载完成之后使用 pageToolFunction 函数进行分页渲染
     loadPageData(1,10,pageToolFunction);
+
+
+    var modal = new ModalEffects();     // 渲染弹出层
+    modal.init();
 });
+
+function editEnvInfo() {
+    var env_name = $("input[id='env_name']").val();
+    var env_ip = $("input[id='env_ip']").val();
+    var env_account = $("input[id='env_account']").val();
+    var env_passwd = $("input[id='env_passwd']").val();
+
+    $.ajax({
+        url:"/env/edit",
+        type:"post",
+        data:{"env_name":env_name, "env_ip":env_ip, "env_account": env_account, "env_passwd": env_passwd},
+        success:function (data) {
+            if(data.status=="SUCCESS"){
+                window.location.reload();
+            }else{
+                $("#_editEnvInfo_error").html(data.errorMsg);
+            }
+        }
+    });
+}

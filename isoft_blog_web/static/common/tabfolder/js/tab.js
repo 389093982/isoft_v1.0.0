@@ -10,7 +10,7 @@
             marginLeft:-1000,           // 切换移动的距离
             time:300,                    // 切换移动的速度
             speed:'slow',
-        }
+        };
         def = $.extend(def, opt);
         this.each(function () {
             var $this = $(this);
@@ -31,4 +31,4 @@
 })(window, jQuery);
 $(function(){
     $(".jyTable").createTab({marginLeft:-1000, time : 300, speed : 'slow'})
-})
+});

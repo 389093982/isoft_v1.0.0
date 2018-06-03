@@ -13,4 +13,8 @@
         <name>isoft_learning_web</name>
         <value>src\isoft\isoft_learning_web\static\common</value>
     </target>
+    <target>
+        <name>isoft_blog_web</name>
+        <value>src\isoft\isoft_blog_web\static\common</value>
+    </target>
 </syncfile>

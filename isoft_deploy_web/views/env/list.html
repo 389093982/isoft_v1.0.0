@@ -1,9 +1,13 @@
-<script src="/static/js/env/env_list.js"></script>
-
 <link rel="stylesheet" type="text/css" href="/static/common/paginator/css/paging.css">
 <script type="text/javascript" src="/static/common/paginator/js/query.js"></script>
 <script type="text/javascript" src="/static/common/paginator/js/paging.js"></script>
 <script type="text/javascript" src="/static/common/vue.min.js"></script>
+
+<script src="/static/common/alert_info/alert_info-1.0.1/js/classie.js"></script>
+<script src="/static/common/alert_info/alert_info-1.0.1/js/modalEffects.js"></script>
+<link href="/static/common/alert_info/alert_info-1.0.1/css/component.css" rel="stylesheet">
+
+<script src="/static/js/env/env_list.js"></script>
 
 <div style="border:1px solid #D1D1D1;min-height: 500px;">
 
@@ -20,8 +24,55 @@
 
     <div id="envInfo_list" class="table-responsive" style="margin: 10px;margin-top: 20px;">
         <div style="margin-bottom: 10px;">
-            <button type="button" class="btn btn-success btn-sm">新增</button>
+            <button type="button" class="btn btn-success btn-sm md-trigger" data-modal="editEnvInfo">新增</button>
+
+            <!-- bootstrap模态框弹出效果 -->
+            <div class="md-modal md-effect-1" id="editEnvInfo">
+                <div class="md-content" style="height: 400px;">
+                    <a href="#" class="md-close" style="float: right;margin: 10px;">X</a>
+                    <h3>新增/编辑环境信息</h3>
+                    <div>
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="env_name" class="col-sm-3 control-label">环境名称</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="env_name" placeholder="请输入环境名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="env_ip" class="col-sm-3 control-label">ip地址</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="env_ip" placeholder="请输入ip地址">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="env_account" class="col-sm-3 control-label">登录账号</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="env_account" placeholder="请输入登录账号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="env_passwd" class="col-sm-3 control-label">登录密码</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="env_passwd" placeholder="请输入登录密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9" id="_editEnvInfo_error" style="color: red;margin-bottom: 5px;"></div>
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="button" class="btn btn-success" onclick="editEnvInfo()" style="width: 100px;">提交</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="md-overlay"></div>
         </div>
+
         <table class="table table-bordered">
             <thead>
             <tr>
