@@ -14,13 +14,7 @@ import (
 // 如果返回的错误为其它类型,则不确定是否在存在
 func PathExists(path string) (bool, error) {
 	_, err := os.Stat(path)
-	if err == nil {
-		return true, nil
-	}
-	if os.IsNotExist(err) {
-		return false, nil
-	}
-	return false, err
+	return err == nil || os.IsNotExist(err), err
 }
 
 // 拷贝文件夹
